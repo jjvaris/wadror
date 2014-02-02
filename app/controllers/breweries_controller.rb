@@ -36,7 +36,7 @@ class BreweriesController < ApplicationController
     @brewery = Brewery.new(brewery_params)
 
     respond_to do |format|
-      if @brewery.save
+      if @brewery.save && @brewery.valid?
         format.html { redirect_to @brewery, notice: 'Brewery was successfully created.' }
         format.json { render action: 'show', status: :created, location: @brewery }
       else
