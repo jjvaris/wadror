@@ -15,6 +15,11 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :test do
+  gem 'rspec-rails', '~> 2.14.1'
+  gem 'factory_girl_rails'
+end
+
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'byebug', group: [:development, :test]
