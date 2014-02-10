@@ -1,3 +1,0 @@
-== README
-
-Heroku http://boiling-crag-5193.herokuapp.com/breweries
