@@ -23,4 +23,5 @@ FactoryGirl.define do
     brewery
     style "Lager"
   end
+
 end

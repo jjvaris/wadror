@@ -70,6 +70,25 @@ describe User do
     end
   end
 
+  describe "favorite style" do
+    let(:user){FactoryGirl.create(:user)}
+
+    it "has method for determining one" do
+      user.should respond_to :favorite_style
+    end
+
+    it "without ratings does not have one" do
+      expect(user.favorite_style).to eq(nil)
+    end
+
+    it "is the only rated if only one rating" do
+      beer = create_beer_with_rating(12, user)
+
+      expect(user.favorite_style).to eq(beer.style)
+    end
+
+  end
+
   def create_beers_with_ratings(*scores, user)
     scores.each do |score|
       create_beer_with_rating(score, user)
@@ -81,4 +100,5 @@ describe User do
     FactoryGirl.create(:rating, score:score,  beer:beer, user:user)
     beer
   end
+
 end

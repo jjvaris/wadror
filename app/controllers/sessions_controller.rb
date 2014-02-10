@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       # talletetaan sessioon kirjautuneen käyttäjän id (jos käyttäjä on olemassa)
       session[:user_id] = user.id
       # uudelleen ohjataan käyttäjä omalle sivulleen
-      redirect_to user, notice: "Welcome back #{user.username}!"
+      redirect_to user, notice: "Welcome back! #{user.username}!"
     end
   end
 
